@@ -23,11 +23,11 @@ type Exchange = {
 
 
 const Home: FC = () => {
-  const { exchanges }: Props = useContext(AppContext);
+  const { filteredExchanges }: Props = useContext(AppContext);
 
   return (
     <div>
-      <ExchangesTable exchanges={exchanges} />
+      <ExchangesTable exchanges={filteredExchanges} />
     </div>
   );
 };
