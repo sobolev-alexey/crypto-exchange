@@ -5,6 +5,7 @@ import Loading from './Loading';
 import ErrorFallback from './ErrorFallback';
 import ExchangesTable from './ExchangesTable';
 import VolumeChart from './VolumeChart';
+import ExchangeLinks from './ExchangeLinks';
 
 export {
   Header,
@@ -14,4 +15,5 @@ export {
   ErrorFallback,
   ExchangesTable,
   VolumeChart,
+  ExchangeLinks,
 }
