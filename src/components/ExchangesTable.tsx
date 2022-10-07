@@ -62,7 +62,7 @@ const ExchangesTable = ({ exchanges, viewport }) => {
         <Badge
           className="exchange-trust-score"
           count={record?.trust_score}
-          style={{ backgroundColor: `hsl(${record?.trust_score / 10 * 157},80%,43%)` }}
+          style={{ backgroundColor: convertColor(record?.trust_score) }}
         />
       ),
       width: 175,
@@ -71,7 +71,7 @@ const ExchangesTable = ({ exchanges, viewport }) => {
       title: 'Volume BTC (24h)',
       key: 'trust_score',
       sorter: (a: Exchange, b: Exchange) => a?.trade_volume_24h_btc - b?.trade_volume_24h_btc,
-      render: (record: Exchange) => record?.trade_volume_24h_btc?.toFixed(2) || '—',
+      render: (record: Exchange) => formatPrice(record?.trade_volume_24h_btc * priceBTC),
       width: 175,
     },
     {
