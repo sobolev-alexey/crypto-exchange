@@ -47,7 +47,6 @@ const Search = () => {
           onChange={onChange}
         />
       </Form.Item>
-      <button className="search" type="submit">Search</button>
     </Form>
   );
 };

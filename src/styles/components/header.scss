@@ -1,0 +1,63 @@
+.header-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+  z-index: 5;
+  // border-bottom: 1px solid $divider-color;
+  box-shadow: 0px 0px 5px rgb(88 102 126 / 8%), 0px 1px 2px rgb(88 102 126 / 12%);
+
+  .header-content {
+    height: 82px;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white;
+    column-gap: 10px;
+  }
+
+  .logo {
+    width: 275px;
+  }
+
+  .header-search-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+
+    .ant-form-item {
+      margin: 0;
+      max-width: 265px;
+      width: 100%;
+    }
+
+    .search-bar {
+      height: 40px;
+      border-radius: 8px;
+      border-color: unset;
+      border-width: unset;
+      box-shadow: unset;
+      border: unset;
+      background-color: rgb(239, 242, 245);
+      color: rgb(166, 176, 195);
+
+      .ant-input {
+        background-color: rgb(239, 242, 245);
+        color: rgb(166, 176, 195);
+        line-height: 20px;
+        color: $base-color;
+      }
+
+      .ant-input-prefix {
+        margin-right: 8px;
+      }
+    }
+  }
+}
