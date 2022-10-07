@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import logoMobile from '../assets/logo.png';
 import logo from '../assets/logo_long.png';

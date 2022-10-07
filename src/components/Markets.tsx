@@ -1,10 +1,7 @@
 import React, { useState, useContext } from 'react';
-import { Table, Badge, Avatar, Statistic } from 'antd';
-import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
-import VolumeChart from './VolumeChart';
+import { Table } from 'antd';
 import { AppContext } from '../context/globalState';
-import { formatPrice, formatVolume, formatPercentage } from '../utils/format';
+import { formatPrice, formatPercentage } from '../utils/format';
 import { Ticker } from '../types';
 
 const Markets = ({ tickers, viewport = '' }: { tickers: Ticker[], viewport?: string }) => {
@@ -34,19 +31,19 @@ const Markets = ({ tickers, viewport = '' }: { tickers: Ticker[], viewport?: str
     {
       title: 'Price',
       key: 'last',
-      render: (record: Ticker) => formatPrice(record?.last),
+      render: (record: Ticker) => formatPrice(record?.last || 0),
       width: 150,
     },
     {
       title: 'Spread',
       key: 'bid_ask_spread_percentage',
-      render: (record: Ticker) => formatPercentage(record?.bid_ask_spread_percentage),
+      render: (record: Ticker) => formatPercentage(record?.bid_ask_spread_percentage || 0),
       width: 150,
     },
     {
       title: 'Volume (24h)',
       key: 'volume',
-      render: (record: Ticker) => formatPrice(record?.volume * record?.last),
+      render: (record: Ticker) => formatPrice((record?.volume || 0) * (record?.last || 0)),
       width: 200,
     },
   ];
