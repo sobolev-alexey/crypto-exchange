@@ -9,6 +9,7 @@ function GlobalState({ children }: { children: ReactNode }) {
   const [exchanges, setExchanges] = useState([]);
   const [filteredExchanges, setFilteredExchanges] = useState([]);
   const [search, setSearch] = useState(null);
+  const [priceBTC, setPriceBTC] = useState(1);
 
   const errorCallback = (error = null) => {
     notification['error']({
@@ -26,6 +27,13 @@ function GlobalState({ children }: { children: ReactNode }) {
   );
   if (error) {
     errorCallback(error);
+  }
+
+  const { data: priceObj, error: priceError } = useSWR(
+    `${import.meta.env.VITE_API_BASE}/simple/price?ids=bitcoin&vs_currencies=usd`
+  );
+  if (priceError) {
+    errorCallback(priceError);
   }
   // const value = React.useMemo(() => ({ exchanges: data }), [data]);
   // return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
@@ -47,11 +55,16 @@ function GlobalState({ children }: { children: ReactNode }) {
     }
   }, [data]); // eslint-disable-line
 
+  useEffect(() => {
+    priceObj && setPriceBTC(priceObj?.bitcoin?.usd);
+  }, [priceObj]); // eslint-disable-line
+
   return <AppContext.Provider value={{ 
     exchanges,
     filteredExchanges, 
     setFilteredExchanges,
     search,
+    priceBTC,
   }}>{children}</AppContext.Provider>;
 };
 
