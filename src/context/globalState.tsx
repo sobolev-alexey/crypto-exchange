@@ -3,12 +3,12 @@ import useSWR from 'swr';
 import { notification } from 'antd';
 import * as JsSearch from 'js-search';
 
-export const AppContext = createContext({});
+export const AppContext = createContext<any>({});
 
 function GlobalState({ children }: { children: ReactNode }) {
   const [exchanges, setExchanges] = useState([]);
   const [filteredExchanges, setFilteredExchanges] = useState([]);
-  const [search, setSearch] = useState(null);
+  const [search, setSearch] = useState<any>(null);
   const [priceBTC, setPriceBTC] = useState(1);
 
   const errorCallback = (error = null) => {

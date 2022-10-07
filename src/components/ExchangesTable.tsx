@@ -5,23 +5,9 @@ import { Link } from 'react-router-dom';
 import VolumeChart from './VolumeChart';
 import { AppContext } from '../context/globalState';
 import { formatPrice, convertColor } from '../utils/format';
+import { Exchange } from '../types';
 
-type Exchange = {
-  id: string,
-  name: string,
-  year_established: number,
-  country: string,
-  description?: string,
-  url?: string,
-  image?: string,
-  has_trading_incentive?: boolean,
-  trust_score: number,
-  trust_score_rank: number,
-  trade_volume_24h_btc: number,
-  trade_volume_24h_btc_normalized?: number
-}
-
-const ExchangesTable = ({ exchanges, viewport }) => {
+const ExchangesTable = ({ exchanges, viewport = '' }: { exchanges: Exchange[], viewport?: string }) => {
   const { priceBTC }: { priceBTC: number } = useContext(AppContext);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);

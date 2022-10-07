@@ -5,16 +5,9 @@ import { Link } from 'react-router-dom';
 import VolumeChart from './VolumeChart';
 import { AppContext } from '../context/globalState';
 import { formatPrice, formatVolume, formatPercentage } from '../utils/format';
+import { Ticker } from '../types';
 
-type Ticker = {
-  base: string,
-  target: string,
-  last?: number,
-  volume?: number,
-  bid_ask_spread_percentage?: number,
-}
-
-const Markets = ({ tickers, viewport = '' }: { tickers: Ticker[], viewport: string }) => {
+const Markets = ({ tickers, viewport = '' }: { tickers: Ticker[], viewport?: string }) => {
   console.log('Tickers', tickers)
   const { priceBTC }: { priceBTC: number } = useContext(AppContext);
   const [page, setPage] = useState(1);
@@ -25,7 +18,10 @@ const Markets = ({ tickers, viewport = '' }: { tickers: Ticker[], viewport: stri
       title: '#',
       dataIndex: 'id',
       key: 'id',
-      render: (id, record, index) => { ++index; return index; },
+      render: (id: string | number, record: Ticker, index: number) => {
+         ++index; 
+         return index; 
+      },
       showSorterTooltip: false,
       width: 50,
     },

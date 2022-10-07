@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   LinkOutlined,
   FacebookOutlined,
@@ -8,17 +7,7 @@ import {
   SlackOutlined,
   MessageOutlined,
 } from '@ant-design/icons';
-
-type ExchangeData = {
-  url?: string,
-  facebook_url?: string,
-  reddit_url?: string,
-  telegram_url?: string,
-  slack_url?: string,
-  other_url_1?: string,
-  other_url_2?: string,
-  twitter_handle?: string,
-}
+import { ExchangeData } from '../types';
 
 const ExchangeLinks = ({ exchange }: { exchange: ExchangeData }) => {
   const { 

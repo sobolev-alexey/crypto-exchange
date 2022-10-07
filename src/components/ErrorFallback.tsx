@@ -1,8 +1,8 @@
 import React from 'react';
 import { Result } from 'antd';
-// import { FallbackProps } from 'react-error-boundary';
+import { FallbackProps } from 'react-error-boundary';
 
-const ErrorFallback = ({ error, resetErrorBoundary }) => {  // { error, resetErrorBoundary } : FallbackProps
+const ErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => {
   console.error(error);
 
   const Home = () => (
