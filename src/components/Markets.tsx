@@ -27,7 +27,7 @@ const Markets = ({ tickers, viewport = '' }: { tickers: Ticker[], viewport: stri
       key: 'id',
       render: (id, record, index) => { ++index; return index; },
       showSorterTooltip: false,
-      width: 40,
+      width: 50,
     },
     {
       title: 'Pair',
@@ -39,26 +39,26 @@ const Markets = ({ tickers, viewport = '' }: { tickers: Ticker[], viewport: stri
       title: 'Price',
       key: 'last',
       render: (record: Ticker) => formatPrice(record?.last),
-      width: 175,
+      width: 150,
     },
     {
       title: 'Spread',
       key: 'bid_ask_spread_percentage',
       render: (record: Ticker) => formatPercentage(record?.bid_ask_spread_percentage),
-      width: 175,
+      width: 150,
     },
     {
       title: 'Volume (24h)',
       key: 'volume',
       render: (record: Ticker) => formatPrice(record?.volume * record?.last),
-      width: 75,
+      width: 200,
     },
   ];
 
   return (
     <React.Fragment>
       <Table
-        scroll={{ x: 990 }}
+        scroll={{ x: 900 }}
         pagination={{
           showSizeChanger: true,
           defaultPageSize: 25,

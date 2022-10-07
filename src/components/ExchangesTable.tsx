@@ -32,8 +32,7 @@ const ExchangesTable = ({ exchanges, viewport }) => {
       key: 'trust_score_rank',
       sorter: (a: Exchange, b: Exchange) => a?.trust_score_rank - b?.trust_score_rank,
       render: (record: Exchange) => record?.trust_score_rank,
-      // defaultSortOrder: 'ascend',
-      width: 40,
+      width: 60,
     },
     {
       title: 'Name',
@@ -52,7 +51,7 @@ const ExchangesTable = ({ exchanges, viewport }) => {
         </Link>
       ),
       sorter: (a: Exchange, b: Exchange) => a?.name?.localeCompare(b?.name),
-      width: ['mobileLandscape', 'mobilePortrait'].includes(viewport) ? 150 : 175,
+      width: ['mobileLandscape', 'mobilePortrait'].includes(viewport) ? 150 : 200,
     },
     {
       title: 'Exchange Score',
@@ -65,21 +64,21 @@ const ExchangesTable = ({ exchanges, viewport }) => {
           style={{ backgroundColor: convertColor(record?.trust_score) }}
         />
       ),
-      width: 175,
+      width: 170,
     },
     {
       title: 'Volume BTC (24h)',
       key: 'trust_score',
       sorter: (a: Exchange, b: Exchange) => a?.trade_volume_24h_btc - b?.trade_volume_24h_btc,
       render: (record: Exchange) => formatPrice(record?.trade_volume_24h_btc * priceBTC),
-      width: 175,
+      width: 200,
     },
     {
       title: 'Established',
       key: 'year_established',
       sorter: (a: Exchange, b: Exchange) => a?.year_established - b?.year_established,
       render: (record: Exchange) => record?.year_established || '—',
-      width: 75,
+      width: 100,
     },
     {
       title: 'Country',
@@ -90,8 +89,8 @@ const ExchangesTable = ({ exchanges, viewport }) => {
     },
     {
       title: 'Volume Graph (7d)',
-      key: 'volume',
-      render: (record: Exchange) => <VolumeChart id={record.id} />,
+      key: 'id',
+      render: (record: Exchange) => null || <VolumeChart id={record.id} />,
       width: 200,
     },
   ];
@@ -99,7 +98,7 @@ const ExchangesTable = ({ exchanges, viewport }) => {
   return (
     <React.Fragment>
       <Table
-        scroll={{ x: 990 }}
+        scroll={{ x: 1200 }}
         pagination={{
           showSizeChanger: true,
           defaultPageSize: 10,
