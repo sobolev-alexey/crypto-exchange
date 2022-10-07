@@ -3,7 +3,7 @@ import { AppContext } from '../context/globalState';
 import { ExchangesTable } from '../components';
 
 type Props = {
-  exchanges?: Exchange[];
+  filteredExchanges?: Exchange[];
 };
 
 type Exchange = {
@@ -21,12 +21,11 @@ type Exchange = {
   trade_volume_24h_btc_normalized?: number
 }
 
-
 const Home: FC = () => {
   const { filteredExchanges }: Props = useContext(AppContext);
 
   return (
-    <div>
+    <div className="home-wrapper">
       <ExchangesTable exchanges={filteredExchanges} />
     </div>
   );
