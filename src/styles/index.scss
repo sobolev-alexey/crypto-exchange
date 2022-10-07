@@ -2,8 +2,10 @@
 @import './helpers/globals';
 
 // components
+@import './components/antd';
 
 // pages
+@import './pages/home';
 
 html {
   height: 100%;
