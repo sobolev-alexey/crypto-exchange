@@ -1,7 +1,9 @@
 {
-  "name": "crypto-exchange",
+  "name": "crypto-exchange-directory",
   "version": "1.0.0",
-  "description": "Crypto Exchanges List",
+  "description": "Crypto Exchange Directory",
+  "author": "Alexey Sobolev <hello@lexer.dev> (https://lexer.dev/)",
+  "license": "Apache-2.0",
   "scripts": {
     "dev": "vite",
     "start": "vite",
