@@ -1,12 +1,14 @@
 import React, { ReactNode, createContext, useState, useEffect } from 'react';
 import useSWR from 'swr';
 import { notification } from 'antd';
+import * as JsSearch from 'js-search';
 
 export const AppContext = createContext({});
 
 function GlobalState({ children }: { children: ReactNode }) {
   const [exchanges, setExchanges] = useState([]);
   const [filteredExchanges, setFilteredExchanges] = useState([]);
+  const [search, setSearch] = useState(null);
 
   const errorCallback = (error = null) => {
     notification['error']({
@@ -29,15 +31,27 @@ function GlobalState({ children }: { children: ReactNode }) {
   // return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 
   useEffect(() => {
-    setExchanges(data);
-    setFilteredExchanges(data);
-    localStorage.setItem('exchanges', JSON.stringify(data));
+    if (data.length) {
+      setExchanges(data);
+      setFilteredExchanges(data);
+      localStorage.setItem('exchanges', JSON.stringify(data));
+      const search = new JsSearch.Search('name');
+      search.addIndex('id');
+      search.addIndex(['name']);
+      search.addIndex('description');
+      search.addIndex('country');
+      search.addIndex('year_established');
+      search.addIndex('url');
+      search.addDocuments(data);
+      setSearch(search);
+    }
   }, [data]); // eslint-disable-line
 
   return <AppContext.Provider value={{ 
     exchanges,
     filteredExchanges, 
     setFilteredExchanges,
+    search,
   }}>{children}</AppContext.Provider>;
 };
 
