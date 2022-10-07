@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Table, Badge, Avatar, Statistic } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
+import VolumeChart from './VolumeChart';
 
 type Exchange = {
   id: string,
@@ -87,7 +88,7 @@ const ExchangesTable = ({ exchanges, viewport }) => {
     {
       title: 'Volume Graph (7d)',
       key: 'volume',
-      render: (record: Exchange) => record.id,
+      render: (record: Exchange) => <VolumeChart id={record.id} />,
       width: 200,
     },
   ];
