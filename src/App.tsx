@@ -1,25 +1,34 @@
-import { ErrorBoundary } from 'react-error-boundary';
+import React, { FC, Suspense } from 'react';
 import { SWRConfig } from 'swr';
+import { ErrorBoundary } from 'react-error-boundary';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import GlobalState from './context/globalState';
-import { ErrorFallback } from './components';
 import { fetcher } from './utils/fetcher';
+import { Loading, ErrorFallback, Header } from './components';
 import { Home, Details } from './pages';
+
+import 'antd/dist/antd.min.css';
+import './styles/index.scss';
 
 function App() {
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
-      <SWRConfig value={{ fetcher, suspense: true, refreshInterval: 1000 * 60 * 60 }}>
-        <GlobalState>
-          <BrowserRouter>
-            <Routes>
-              <Route path={'/exchange/:id'} element={<Details />} />
-              <Route index element={<Home />} />
-              <Route path="*" element={<Home />} />
-            </Routes>
-          </BrowserRouter>
-        </GlobalState>
-      </SWRConfig>
+      <Suspense fallback={<Loading />}>
+        <React.StrictMode>
+          <SWRConfig value={{ fetcher, suspense: true, refreshInterval: 1000 * 60 * 60 }}>
+            <GlobalState>
+              <BrowserRouter>
+                <Header />
+                <Routes>
+                  <Route path={'/exchange/:id'} element={<Details />} />
+                  <Route index element={<Home />} />
+                  <Route path="*" element={<Home />} />
+                </Routes>
+              </BrowserRouter>
+            </GlobalState>
+          </SWRConfig>
+        </React.StrictMode>
+      </Suspense>
     </ErrorBoundary>
   );
 }
