@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Table, Badge, Avatar, Statistic } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import VolumeChart from './VolumeChart';
+import { AppContext } from '../context/globalState';
+import { formatPrice, convertColor } from '../utils/format';
 
 type Exchange = {
   id: string,
@@ -20,8 +22,9 @@ type Exchange = {
 }
 
 const ExchangesTable = ({ exchanges, viewport }) => {
+  const { priceBTC }: { priceBTC: number } = useContext(AppContext);
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(20);
+  const [pageSize, setPageSize] = useState(10);
 
   const columns = [
     {
@@ -99,8 +102,8 @@ const ExchangesTable = ({ exchanges, viewport }) => {
         scroll={{ x: 990 }}
         pagination={{
           showSizeChanger: true,
-          defaultPageSize: 25,
-          pageSizeOptions: [10, 25, 50, 100],
+          defaultPageSize: 10,
+          pageSizeOptions: [10, 25, 50],
           onShowSizeChange: (current, size) => {
             setPage(current);
             setPageSize(size)
