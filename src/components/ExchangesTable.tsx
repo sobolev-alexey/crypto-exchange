@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Table, Badge, Avatar, Statistic } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import VolumeChart from './VolumeChart';
+import { AppContext } from '../context/globalState';
+import { formatPrice, convertColor } from '../utils/format';
 
 type Exchange = {
   id: string,
@@ -20,8 +22,9 @@ type Exchange = {
 }
 
 const ExchangesTable = ({ exchanges, viewport }) => {
+  const { priceBTC }: { priceBTC: number } = useContext(AppContext);
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(20);
+  const [pageSize, setPageSize] = useState(10);
 
   const columns = [
     {
@@ -59,7 +62,7 @@ const ExchangesTable = ({ exchanges, viewport }) => {
         <Badge
           className="exchange-trust-score"
           count={record?.trust_score}
-          style={{ backgroundColor: `hsl(${record?.trust_score / 10 * 157},80%,43%)` }}
+          style={{ backgroundColor: convertColor(record?.trust_score) }}
         />
       ),
       width: 175,
@@ -68,7 +71,7 @@ const ExchangesTable = ({ exchanges, viewport }) => {
       title: 'Volume BTC (24h)',
       key: 'trust_score',
       sorter: (a: Exchange, b: Exchange) => a?.trade_volume_24h_btc - b?.trade_volume_24h_btc,
-      render: (record: Exchange) => record?.trade_volume_24h_btc?.toFixed(2) || '—',
+      render: (record: Exchange) => formatPrice(record?.trade_volume_24h_btc * priceBTC),
       width: 175,
     },
     {
@@ -99,8 +102,8 @@ const ExchangesTable = ({ exchanges, viewport }) => {
         scroll={{ x: 990 }}
         pagination={{
           showSizeChanger: true,
-          defaultPageSize: 25,
-          pageSizeOptions: [10, 25, 50, 100],
+          defaultPageSize: 10,
+          pageSizeOptions: [10, 25, 50],
           onShowSizeChange: (current, size) => {
             setPage(current);
             setPageSize(size)

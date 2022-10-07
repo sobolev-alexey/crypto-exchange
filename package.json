@@ -27,6 +27,7 @@
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
+    "@types/js-search": "^1.4.0",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
