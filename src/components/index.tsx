@@ -1,5 +1,5 @@
-import Header from './Header';
+import ErrorFallback from './ErrorFallback';
 
 export {
-  Header,
+  ErrorFallback,
 }
