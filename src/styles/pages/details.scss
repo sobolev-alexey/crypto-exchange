@@ -55,7 +55,7 @@
           font-size: 15px;
 
           svg {
-            color: rgb(128, 138, 157);
+            color: $base-color2;
             font-size: 18px;
           }
         }
@@ -73,7 +73,7 @@
       .exchange-volume-wrapper {
         .hint {
           line-height: 1.5;
-          color: rgb(128, 138, 157);
+          color: $base-color2;
           font-size: 15px;
         }
       }

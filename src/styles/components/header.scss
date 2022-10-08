@@ -6,8 +6,7 @@
   justify-content: center;
   background-color: $white;
   z-index: 5;
-  // border-bottom: 1px solid $divider-color;
-  box-shadow: 0px 0px 5px rgb(88 102 126 / 8%), 0px 1px 2px rgb(88 102 126 / 12%);
+  box-shadow: 0px 0px 5px $shadow-color-8, 0px 1px 2px $shadow-color-12;
 
   .header-content {
     height: 80px;
@@ -45,12 +44,12 @@
       border-width: unset;
       box-shadow: unset;
       border: unset;
-      background-color: rgb(239, 242, 245);
-      color: rgb(166, 176, 195);
+      background-color: $search-background;
+      color: $search-color;
 
       .ant-input {
-        background-color: rgb(239, 242, 245);
-        color: rgb(166, 176, 195);
+        background-color: $search-background;
+        color: $search-color;
         line-height: 20px;
         color: $base-color;
       }
