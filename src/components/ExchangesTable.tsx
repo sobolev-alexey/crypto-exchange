@@ -1,13 +1,15 @@
-import { useState, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Table, Badge, Avatar } from 'antd';
 import { Link } from 'react-router-dom';
 import VolumeChart from './VolumeChart';
 import { AppContext } from '../context/globalState';
 import { formatPrice, convertColor } from '../utils/format';
+import useWindowDimensions from '../utils/useWindowDimensions';
 import { Exchange } from '../types';
 
-const ExchangesTable = ({ exchanges, viewport = '' }: { exchanges: Exchange[], viewport?: string }) => {
+const ExchangesTable = ({ exchanges }: { exchanges: Exchange[] }) => {
   const { priceBTC }: { priceBTC: number } = useContext(AppContext);
+  const { viewport } = useWindowDimensions();
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
 
@@ -17,6 +19,7 @@ const ExchangesTable = ({ exchanges, viewport = '' }: { exchanges: Exchange[], v
       key: 'trust_score_rank',
       sorter: (a: Exchange, b: Exchange) => a?.trust_score_rank - b?.trust_score_rank,
       render: (record: Exchange) => record?.trust_score_rank,
+      fixed: viewport !== 'desktop',
       width: 60,
     },
     {
@@ -36,7 +39,8 @@ const ExchangesTable = ({ exchanges, viewport = '' }: { exchanges: Exchange[], v
         </Link>
       ),
       sorter: (a: Exchange, b: Exchange) => a?.name?.localeCompare(b?.name),
-      width: ['mobileLandscape', 'mobilePortrait'].includes(viewport) ? 150 : 200,
+      fixed: viewport !== 'desktop',
+      width: viewport !== 'desktop' ? 150 : 200,
     },
     {
       title: 'Exchange Score',
@@ -49,14 +53,14 @@ const ExchangesTable = ({ exchanges, viewport = '' }: { exchanges: Exchange[], v
           style={{ backgroundColor: convertColor(record?.trust_score) }}
         />
       ),
-      width: 170,
+      width: viewport !== 'desktop' ? 120 : 170,
     },
     {
       title: 'Volume BTC (24h)',
       key: 'trust_score',
       sorter: (a: Exchange, b: Exchange) => a?.trade_volume_24h_btc - b?.trade_volume_24h_btc,
       render: (record: Exchange) => formatPrice(record?.trade_volume_24h_btc * priceBTC),
-      width: 200,
+      width: viewport !== 'desktop' ? 150 : 200,
     },
     {
       title: 'Established',
@@ -70,7 +74,7 @@ const ExchangesTable = ({ exchanges, viewport = '' }: { exchanges: Exchange[], v
       key: 'country',
       sorter: (a: Exchange, b: Exchange) => a?.country?.localeCompare(b?.country),
       render: (record: Exchange) => record?.country || '—',
-      width: 200,
+      width: viewport !== 'desktop' ? 150 : 200,
     },
     {
       title: 'Volume Graph (7d)',
@@ -81,32 +85,41 @@ const ExchangesTable = ({ exchanges, viewport = '' }: { exchanges: Exchange[], v
   ];
 
   return (
-    <Table
-      scroll={{ x: 1200 }}
-      pagination={{
-        showSizeChanger: true,
-        defaultPageSize: 10,
-        pageSizeOptions: [10, 25, 50],
-        onShowSizeChange: (current, size) => {
-          setPage(current);
-          setPageSize(size)
-        },
-        onChange: (page, pageSize) => {
-          setPage(page);
-          setPageSize(pageSize)
-        },
-        showTotal: (total, range) => {
-          let pageCount = Math.ceil(total / pageSize);
-          if (total === 0 && pageCount === 0) {
-            pageCount = 1;
+    <React.Fragment>
+      <Table
+        scroll={{ x: 1200 }}
+        pagination={{
+          showSizeChanger: true,
+          defaultPageSize: 10,
+          pageSizeOptions: [10, 25, 50],
+          onShowSizeChange: (current, size) => {
+            setPage(current);
+            setPageSize(size)
+          },
+          onChange: (page, pageSize) => {
+            setPage(page);
+            setPageSize(pageSize)
+          },
+          showTotal: (total, range) => {
+            let pageCount = Math.ceil(total / pageSize);
+            if (total === 0 && pageCount === 0) {
+              pageCount = 1;
+            }
+            return `${page} of ${pageCount} page${pageCount > 1 ? 's' : ''}`;
           }
-          return `${page} of ${pageCount} page${pageCount > 1 ? 's' : ''}`;
-        }
-      }}
-      dataSource={exchanges}
-      columns={columns}
-      rowKey={record => record?.id}
-    />
+        }}
+        dataSource={exchanges}
+        columns={columns}
+        rowKey={record => record?.id}
+      />
+      {
+        viewport !== 'desktop' && (
+          <span className="table-scroll-hint">
+            {'Scroll sideways to view more data -->'}
+          </span>
+        )
+      }
+    </React.Fragment>
   )
 };
 
