@@ -9,7 +9,7 @@ const Header = () => {
       <div className="header-content">
         <Link to="/">
           <img src={logo} alt="Crypto Exchange Directory" className="logo" />
-          {/* <img src={logoMobile} alt="Crypto Exchange Directory" className="logo-mobile" /> */}
+          <img src={logoMobile} alt="Crypto Exchange Directory" className="logo-mobile" />
         </Link>
         <Search />
       </div>

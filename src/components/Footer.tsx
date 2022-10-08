@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import logoMobile from '../assets/logo.png';
 import logo from '../assets/logo_long.png';
 
 const Footer = () => {
@@ -7,6 +8,7 @@ const Footer = () => {
       <div className="footer-content">
         <Link to="/">
           <img src={logo} alt="Crypto Exchange Directory" className="logo" />
+          <img src={logoMobile} alt="Crypto Exchange Directory" className="logo-mobile" />
         </Link>
         <div className="copyright">
           <a href="https://lexer.dev" target="_blank" rel="noopener noreferrer">

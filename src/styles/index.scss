@@ -1,3 +1,21 @@
+$breakpoints: (
+  mobilePortrait: 391px,
+  mobileLandscape: 581px,
+  tabletPortrait: 821px,
+  tabletLandscape: 1181px,
+  desktop: 1600px,
+);
+
+// If you want to display the currently active breakpoint in the top
+// right corner of your site during development, add the breakpoints
+// to this list, ordered by width. For examples: (mobile, tablet, desktop).
+// $show-breakpoints: (mobilePortrait, mobileLandscape, tabletPortrait, tabletLandscape, desktop);
+
+@use 'sass-mq' with (
+  $breakpoints: $breakpoints,
+  // $show-breakpoints: $show-breakpoints
+);
+
 // helpers
 @import './helpers/globals';
 
@@ -11,6 +29,7 @@
 @import './pages/home';
 @import './pages/details';
 
+
 html {
   height: 100%;
   width: 100%;
@@ -23,6 +42,7 @@ body {
   height: 100%;
   width: 100%;
   background-color: $background-color;
+  overflow-x: hidden;
 }
 
 div,

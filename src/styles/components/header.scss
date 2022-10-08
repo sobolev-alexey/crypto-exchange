@@ -6,6 +6,7 @@
   justify-content: center;
   background-color: $white;
   z-index: 5;
+  padding: 0 10px;
   box-shadow: 0px 0px 5px $shadow-color-8, 0px 1px 2px $shadow-color-12;
 
   .header-content {
@@ -22,6 +23,17 @@
 
   .logo {
     width: 275px;
+    @include sass-mq.mq($until: mobileLandscape) {
+      display: none;
+    }
+  }
+
+  .logo-mobile {
+    display: none;
+    @include sass-mq.mq($until: mobileLandscape) {
+      display: block;
+      width: 55px;
+    }
   }
 
   .header-search-wrapper {

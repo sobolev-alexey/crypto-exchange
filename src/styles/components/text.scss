@@ -11,6 +11,10 @@ h1 {
   font-size: 34px;
   font-weight: 600;
   line-height: 50px;
+
+  @include sass-mq.mq($until: tabletPortrait) {
+    font-size: 30px;
+  }
 }
 
 h2 {
