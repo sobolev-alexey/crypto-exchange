@@ -11,4 +11,4 @@ export const formatVolume = (value: number, locale: string = 'en-US') =>
   new Intl.NumberFormat(locale).format(Math.round(value));
 
 export const formatPercentage = (value: number, locale: string = 'en-US') => 
-  `${new Intl.NumberFormat(locale).format((value * 100).toFixed(2))}%`;
+  `${new Intl.NumberFormat(locale).format(Number((value * 100).toFixed(2)))}%`;
