@@ -2,10 +2,10 @@ name: Cypress CI E2E on Chrome
 on: 
   # Manual button click from the GitHub UI
   workflow_dispatch:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  # push:
+  #   branches: [main]
+  # pull_request:
+  #   branches: [main]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
