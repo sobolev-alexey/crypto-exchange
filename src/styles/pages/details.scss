@@ -1,0 +1,92 @@
+.details-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 900px;
+  width: 100%;
+  min-height: calc(100vh - 200px);
+  align-self: center;
+  margin: 20px;
+
+  .details-main-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 350px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid $divider-color;
+
+    .exchange-details-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 50%;
+      row-gap: 30px;
+      padding-left: 15px;
+
+      .exchange-name-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        column-gap: 15px;
+        padding: 25px 0 10px;
+      }
+
+      .exchange-links-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        row-gap: 12px;
+
+        .exchange-link {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          column-gap: 12px;
+          font-size: 15px;
+
+          svg {
+            color: rgb(128, 138, 157);
+            font-size: 18px;
+          }
+        }
+      }
+    }
+    .exchange-stats-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 50%;
+      row-gap: 80px;
+      height: 100%;
+
+      .exchange-volume-wrapper {
+        .hint {
+          line-height: 1.5;
+          color: rgb(128, 138, 157);
+          font-size: 15px;
+        }
+      }
+
+      .exchange-score {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+      }
+    }
+  }
+
+  .markets-label {
+    align-self: flex-start;
+  }
+}
