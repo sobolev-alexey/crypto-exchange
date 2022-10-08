@@ -26,15 +26,8 @@ const ExchangesTable = ({ exchanges }: { exchanges: Exchange[] }) => {
       title: 'Name',
       key: 'name',
       render: (record: Exchange) => (
-        <Link 
-          to={`/exchange/${record.id}`} 
-          className="exchange-name-wrapper view-report"
-        >
-          <Avatar
-            size="small"
-            alt={record.name}
-            src={record.image}
-          />
+        <Link to={`/exchange/${record.id}`} className='exchange-name-wrapper view-report'>
+          <Avatar size='small' alt={record.name} src={record.image} />
           {record.name}
         </Link>
       ),
@@ -48,7 +41,7 @@ const ExchangesTable = ({ exchanges }: { exchanges: Exchange[] }) => {
       sorter: (a: Exchange, b: Exchange) => a?.trust_score - b?.trust_score,
       render: (record: Exchange) => (
         <Badge
-          className="exchange-trust-score"
+          className='exchange-trust-score'
           count={record?.trust_score}
           style={{ backgroundColor: convertColor(record?.trust_score) }}
         />
@@ -94,33 +87,29 @@ const ExchangesTable = ({ exchanges }: { exchanges: Exchange[] }) => {
           pageSizeOptions: [10, 25, 50],
           onShowSizeChange: (current, size) => {
             setPage(current);
-            setPageSize(size)
+            setPageSize(size);
           },
           onChange: (page, pageSize) => {
             setPage(page);
-            setPageSize(pageSize)
+            setPageSize(pageSize);
           },
-          showTotal: (total, range) => {
+          showTotal: (total) => {
             let pageCount = Math.ceil(total / pageSize);
             if (total === 0 && pageCount === 0) {
               pageCount = 1;
             }
             return `${page} of ${pageCount} page${pageCount > 1 ? 's' : ''}`;
-          }
+          },
         }}
         dataSource={exchanges}
         columns={columns}
-        rowKey={record => record?.id}
+        rowKey={(record) => record?.id}
       />
-      {
-        viewport !== 'desktop' && (
-          <span className="table-scroll-hint">
-            {'Scroll sideways to view more data -->'}
-          </span>
-        )
-      }
+      {viewport !== 'desktop' && (
+        <span className='table-scroll-hint'>{'Scroll sideways to view more data -->'}</span>
+      )}
     </React.Fragment>
-  )
+  );
 };
 
 export default ExchangesTable;

@@ -5,20 +5,15 @@ const ErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => {
   console.error(error);
 
   const Home = () => (
-    <a href="/" className="primary">
-      <button onClick={resetErrorBoundary} className="primary">
+    <a href='/' className='primary'>
+      <button onClick={resetErrorBoundary} className='primary'>
         Back Home
       </button>
     </a>
   );
 
   return (
-    <Result
-      status="500"
-      title="500"
-      subTitle="Sorry, something went wrong."
-      extra={<Home />}
-    />
+    <Result status='500' title='500' subTitle='Sorry, something went wrong.' extra={<Home />} />
   );
 };
 

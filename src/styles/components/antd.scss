@@ -1,6 +1,7 @@
-.ant-input-affix-wrapper:hover, 
+.ant-input-affix-wrapper:hover,
 .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover,
-.ant-input-affix-wrapper-focused, .ant-input-affix-wrapper:focus {
+.ant-input-affix-wrapper-focused,
+.ant-input-affix-wrapper:focus {
   border-color: unset;
   border-width: unset;
   box-shadow: unset;
@@ -26,7 +27,8 @@
   background: $divider-color;
 }
 
-.ant-table-column-title, .ant-table-thead > tr > th.ant-table-cell {
+.ant-table-column-title,
+.ant-table-thead > tr > th.ant-table-cell {
   color: $base-color;
   font-size: 12px;
   font-weight: 700;
@@ -52,7 +54,7 @@
         flex-direction: row-reverse;
         justify-content: flex-end;
         column-gap: 10px;
-    
+
         .ant-table-column-title {
           flex: unset;
         }
@@ -80,4 +82,3 @@
     justify-content: center;
   }
 }
-

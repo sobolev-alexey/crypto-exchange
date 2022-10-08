@@ -9,7 +9,6 @@ const Markets = ({ tickers }: { tickers: Ticker[] }) => {
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
 
-  console.log('viewport', viewport)
   const columns = [
     {
       title: '#',
@@ -57,33 +56,29 @@ const Markets = ({ tickers }: { tickers: Ticker[] }) => {
           pageSizeOptions: [10, 25, 50, 100],
           onShowSizeChange: (current, size) => {
             setPage(current);
-            setPageSize(size)
+            setPageSize(size);
           },
           onChange: (page, pageSize) => {
             setPage(page);
-            setPageSize(pageSize)
+            setPageSize(pageSize);
           },
-          showTotal: (total, range) => {
+          showTotal: (total) => {
             let pageCount = Math.ceil(total / pageSize);
             if (total === 0 && pageCount === 0) {
               pageCount = 1;
             }
             return `${page} of ${pageCount} page${pageCount > 1 ? 's' : ''}`;
-          }
+          },
         }}
         dataSource={tickers}
         columns={columns}
         rowKey={(record: Ticker) => `${record?.base}/${record?.target}`}
       />
-      {
-        screenWidth < 600 && (
-          <span className="table-scroll-hint">
-            {'Scroll sideways to view more data -->'}
-          </span>
-        )
-      }
+      {screenWidth < 600 && (
+        <span className='table-scroll-hint'>{'Scroll sideways to view more data -->'}</span>
+      )}
     </React.Fragment>
-  )
+  );
 };
 
 export default Markets;

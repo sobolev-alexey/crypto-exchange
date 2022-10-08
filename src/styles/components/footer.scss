@@ -23,14 +23,14 @@
 
   .logo {
     width: 200px;
-    @include sass-mq.mq($until: mobileLandscape) {
+    @include sass-mq.mq($until: tabletPortrait) {
       display: none;
     }
   }
 
   .logo-mobile {
     display: none;
-    @include sass-mq.mq($until: mobileLandscape) {
+    @include sass-mq.mq($until: tabletPortrait) {
       display: block;
       height: 45px;
     }
@@ -43,5 +43,9 @@
     align-items: flex-end;
     width: 100%;
     row-gap: 5px;
+
+    span {
+      text-align: right;
+    }
   }
 }

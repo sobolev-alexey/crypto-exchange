@@ -18,7 +18,7 @@ function getWindowDimensions() {
   return {
     screenWidth,
     height,
-    viewport
+    viewport,
   };
 }
 
