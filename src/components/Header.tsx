@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className='header-wrapper'>
       <div className='header-content'>
-        <Link to='/'>
+        <Link to='/' className='link-home'>
           <img src={logo} alt='Crypto Exchange Directory' className='logo' />
           <img src={logoMobile} alt='Crypto Exchange Directory' className='logo-mobile' />
         </Link>

@@ -2,3 +2,4 @@ node_modules
 app/src/fonts
 **/*.css
 yarn.lock
+package-lock.json

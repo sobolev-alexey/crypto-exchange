@@ -11,7 +11,7 @@ const Footer = () => {
           <img src={logoMobile} alt='Crypto Exchange Directory' className='logo-mobile' />
         </Link>
         <div className='copyright'>
-          <a href='https://lexer.dev' target='_blank' rel='noopener noreferrer'>
+          <a href='https://lexer.dev' target='_blank' rel='noopener noreferrer' className='personal'>
             © Alexey Sobolev (https://lexer.dev)
           </a>
           <span>

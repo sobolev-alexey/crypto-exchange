@@ -12,11 +12,13 @@ const VolumeChart = ({ id }: { id: string }) => {
   );
 
   useEffect(() => {
-    const chartData = data?.map((arr: (string | number)[]) => ({
-      time: arr[0],
-      value: Math.round(Number(arr[1])),
-    }));
-    setChartData(chartData);
+    if (data.length) {
+      const chartData = data?.map((arr: (string | number)[]) => ({
+        time: arr[0],
+        value: Math.round(Number(arr[1])),
+      }));
+      setChartData(chartData);
+    }
   }, [data]);
 
   const config: any = {
