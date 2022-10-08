@@ -1,21 +1,10 @@
 import React, { useState, useContext } from 'react';
-import { Table, Badge, Avatar, Statistic } from 'antd';
-import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
-import VolumeChart from './VolumeChart';
+import { Table } from 'antd';
 import { AppContext } from '../context/globalState';
-import { formatPrice, formatVolume, formatPercentage } from '../utils/format';
+import { formatPrice, formatPercentage } from '../utils/format';
+import { Ticker } from '../types';
 
-type Ticker = {
-  base: string,
-  target: string,
-  last?: number,
-  volume?: number,
-  bid_ask_spread_percentage?: number,
-}
-
-const Markets = ({ tickers, viewport = '' }: { tickers: Ticker[], viewport: string }) => {
-  console.log('Tickers', tickers)
+const Markets = ({ tickers, viewport = '' }: { tickers: Ticker[], viewport?: string }) => {
   const { priceBTC }: { priceBTC: number } = useContext(AppContext);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
@@ -25,7 +14,10 @@ const Markets = ({ tickers, viewport = '' }: { tickers: Ticker[], viewport: stri
       title: '#',
       dataIndex: 'id',
       key: 'id',
-      render: (id, record, index) => { ++index; return index; },
+      render: (id: string | number, record: Ticker, index: number) => {
+         ++index; 
+         return index; 
+      },
       showSorterTooltip: false,
       width: 50,
     },
@@ -38,52 +30,50 @@ const Markets = ({ tickers, viewport = '' }: { tickers: Ticker[], viewport: stri
     {
       title: 'Price',
       key: 'last',
-      render: (record: Ticker) => formatPrice(record?.last),
+      render: (record: Ticker) => formatPrice(record?.last || 0),
       width: 150,
     },
     {
       title: 'Spread',
       key: 'bid_ask_spread_percentage',
-      render: (record: Ticker) => formatPercentage(record?.bid_ask_spread_percentage),
+      render: (record: Ticker) => formatPercentage(record?.bid_ask_spread_percentage || 0),
       width: 150,
     },
     {
       title: 'Volume (24h)',
       key: 'volume',
-      render: (record: Ticker) => formatPrice(record?.volume * record?.last),
+      render: (record: Ticker) => formatPrice((record?.volume || 0) * (record?.last || 0)),
       width: 200,
     },
   ];
 
   return (
-    <React.Fragment>
-      <Table
-        scroll={{ x: 900 }}
-        pagination={{
-          showSizeChanger: true,
-          defaultPageSize: 25,
-          pageSizeOptions: [10, 25, 50, 100],
-          onShowSizeChange: (current, size) => {
-            setPage(current);
-            setPageSize(size)
-          },
-          onChange: (page, pageSize) => {
-            setPage(page);
-            setPageSize(pageSize)
-          },
-          showTotal: (total, range) => {
-            let pageCount = Math.ceil(total / pageSize);
-            if (total === 0 && pageCount === 0) {
-              pageCount = 1;
-            }
-            return `${page} of ${pageCount} page${pageCount > 1 ? 's' : ''}`;
+    <Table
+      scroll={{ x: 900 }}
+      pagination={{
+        showSizeChanger: true,
+        defaultPageSize: 25,
+        pageSizeOptions: [10, 25, 50, 100],
+        onShowSizeChange: (current, size) => {
+          setPage(current);
+          setPageSize(size)
+        },
+        onChange: (page, pageSize) => {
+          setPage(page);
+          setPageSize(pageSize)
+        },
+        showTotal: (total, range) => {
+          let pageCount = Math.ceil(total / pageSize);
+          if (total === 0 && pageCount === 0) {
+            pageCount = 1;
           }
-        }}
-        dataSource={tickers}
-        columns={columns}
-        rowKey={(record: Ticker) => `${record?.base}/${record?.target}`}
-      />
-    </React.Fragment>
+          return `${page} of ${pageCount} page${pageCount > 1 ? 's' : ''}`;
+        }
+      }}
+      dataSource={tickers}
+      columns={columns}
+      rowKey={(record: Ticker) => `${record?.base}/${record?.target}`}
+    />
   )
 };
 

@@ -49,10 +49,6 @@ th {
   overflow-wrap: break-word;
 }
 
-label {
-  font-weight: 500;
-}
-
 * {
   box-sizing: border-box;
   -webkit-overflow-scrolling: touch;
@@ -63,16 +59,8 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   overflow-x: scroll;
-}
-
-label {
-  font-weight: 500;
-}
-
-button {
-  outline: none !important;
 }
 
 .hidden {
