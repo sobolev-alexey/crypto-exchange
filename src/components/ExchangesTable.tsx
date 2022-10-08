@@ -26,7 +26,7 @@ const ExchangesTable = ({ exchanges }: { exchanges: Exchange[] }) => {
       title: 'Name',
       key: 'name',
       render: (record: Exchange) => (
-        <Link to={`/exchange/${record.id}`} className='exchange-name-wrapper view-report'>
+        <Link to={`/exchange/${record.id}`} className='exchange-name-wrapper'>
           <Avatar size='small' alt={record.name} src={record.image} />
           {record.name}
         </Link>
