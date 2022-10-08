@@ -1,0 +1,35 @@
+h1, h2, h3, p {
+  font-family: 'Inter', 'Roboto', 'Open Sans', sans-serif;
+  font-style: normal;
+  overflow-wrap: break-word;
+  color: $base-color;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 50px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34px;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+
+  &:hover:not(.primary) {
+    color: rgba(16, 112, 224, 0.85);
+    text-decoration: none;
+  }
+}
