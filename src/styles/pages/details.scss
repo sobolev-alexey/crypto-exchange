@@ -7,7 +7,11 @@
   width: 100%;
   min-height: calc(100vh - 200px);
   align-self: center;
-  margin: 20px;
+  margin: 20px 0;
+
+  @include sass-mq.mq($until: mobileLandscape) {
+    margin-top: 0
+  }
 
   .details-main-content-wrapper {
     display: flex;
@@ -20,6 +24,11 @@
     margin-bottom: 30px;
     border-bottom: 1px solid $divider-color;
 
+    @include sass-mq.mq($until: mobileLandscape) {
+      flex-direction: column;
+      padding-top: 0;
+    }
+
     .exchange-details-wrapper {
       display: flex;
       flex-direction: column;
@@ -28,6 +37,15 @@
       width: 50%;
       row-gap: 30px;
       padding-left: 15px;
+
+      @include sass-mq.mq($until: tabletPortrait) {
+        width: 45%;
+      }
+
+      @include sass-mq.mq($until: mobileLandscape) {
+        row-gap: 10px;
+        width: 100%;
+      }
 
       .exchange-name-wrapper {
         display: flex;
@@ -70,6 +88,17 @@
       row-gap: 80px;
       height: 100%;
 
+      @include sass-mq.mq($until: tabletPortrait) {
+        width: 55%;
+      }
+
+      @include sass-mq.mq($until: mobileLandscape) {
+        padding-left: 15px;
+        margin-top: 30px;
+        row-gap: 30px;
+        width: 100%;
+      }
+
       .exchange-volume-wrapper {
         .hint {
           line-height: 1.5;
@@ -88,5 +117,6 @@
 
   .markets-label {
     align-self: flex-start;
+    padding-left: 15px;
   }
 }
