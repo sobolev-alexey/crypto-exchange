@@ -5,7 +5,6 @@ import { formatPrice, formatPercentage } from '../utils/format';
 import { Ticker } from '../types';
 
 const Markets = ({ tickers, viewport = '' }: { tickers: Ticker[], viewport?: string }) => {
-  console.log('Tickers', tickers)
   const { priceBTC }: { priceBTC: number } = useContext(AppContext);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
