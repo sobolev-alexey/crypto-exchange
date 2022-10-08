@@ -18,4 +18,4 @@ export {
   VolumeChart,
   Markets,
   ExchangeLinks,
-}
+};

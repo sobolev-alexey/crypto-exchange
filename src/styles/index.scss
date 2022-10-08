@@ -12,9 +12,8 @@ $breakpoints: (
 // $show-breakpoints: (mobilePortrait, mobileLandscape, tabletPortrait, tabletLandscape, desktop);
 
 @use 'sass-mq' with (
-  $breakpoints: $breakpoints,
-  // $show-breakpoints: $show-breakpoints
-);
+  $breakpoints: $breakpoints
+); // $show-breakpoints: $show-breakpoints);
 
 // helpers
 @import './helpers/globals';
@@ -28,7 +27,6 @@ $breakpoints: (
 // pages
 @import './pages/home';
 @import './pages/details';
-
 
 html {
   height: 100%;

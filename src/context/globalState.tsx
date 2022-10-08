@@ -1,4 +1,4 @@
-import React, { ReactNode, createContext, useState, useEffect } from 'react';
+import { ReactNode, createContext, useState, useEffect } from 'react';
 import useSWR from 'swr';
 import { notification } from 'antd';
 import * as JsSearch from 'js-search';
@@ -16,15 +16,14 @@ function GlobalState({ children }: { children: ReactNode }) {
       key: 'error',
       duration: 10,
       message: 'Error',
-      description: error || 'There was an error loading data. Please see console output for details.'
+      description:
+        error || 'There was an error loading data. Please see console output for details.',
     });
     console.error(error);
-  }
+  };
 
   // Options API https://swr.vercel.app/docs/options
-  const { data, error } = useSWR(
-    `${import.meta.env.VITE_API_BASE}/exchanges?per_page=100`
-  );
+  const { data, error } = useSWR(`${import.meta.env.VITE_API_BASE}/exchanges?per_page=100`);
   if (error) {
     errorCallback(error);
   }
@@ -59,13 +58,19 @@ function GlobalState({ children }: { children: ReactNode }) {
     priceObj && setPriceBTC(priceObj?.bitcoin?.usd);
   }, [priceObj]); // eslint-disable-line
 
-  return <AppContext.Provider value={{ 
-    exchanges,
-    filteredExchanges, 
-    setFilteredExchanges,
-    search,
-    priceBTC,
-  }}>{children}</AppContext.Provider>;
-};
+  return (
+    <AppContext.Provider
+      value={{
+        exchanges,
+        filteredExchanges,
+        setFilteredExchanges,
+        search,
+        priceBTC,
+      }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
+}
 
 export default GlobalState;

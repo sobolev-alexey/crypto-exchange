@@ -16,34 +16,34 @@ const Search = () => {
     if (location.pathname !== '/') {
       navigate('/');
     }
-  }
+  };
 
   const onChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target?.value === '') {
       setFilteredExchanges(exchanges);
     }
-  }
+  };
 
   return (
     <Form
-      className="header-search-wrapper"
+      className='header-search-wrapper'
       form={searchForm}
-      size="large"
-      layout="horizontal"
-      name="search-form"
+      size='large'
+      layout='horizontal'
+      name='search-form'
       hideRequiredMark
       onFinish={onFinish}
-      initialValues={{ 
+      initialValues={{
         query: '',
       }}
     >
-      <Form.Item name="query">
-        <Input 
-          placeholder="Search" 
+      <Form.Item name='query'>
+        <Input
+          placeholder='Search'
           allowClear
           prefix={<SearchOutlined />}
           suffix={null}
-          className="search-bar"
+          className='search-bar'
           onChange={onChange}
         />
       </Form.Item>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Spin } from 'antd';
 import useSWR from 'swr';
 import { Line } from '@ant-design/plots';
@@ -12,7 +12,10 @@ const VolumeChart = ({ id }: { id: string }) => {
   );
 
   useEffect(() => {
-    const chartData = data?.map((arr: (string | number)[]) => ({ time: arr[0], value: Math.round(Number(arr[1])) }));
+    const chartData = data?.map((arr: (string | number)[]) => ({
+      time: arr[0],
+      value: Math.round(Number(arr[1])),
+    }));
     setChartData(chartData);
   }, [data]);
 
@@ -24,19 +27,19 @@ const VolumeChart = ({ id }: { id: string }) => {
     color: '#d64960',
     xAxis: false,
     yAxis: false,
-    interactions: [{ type: 'tooltip', enable: false }]
+    interactions: [{ type: 'tooltip', enable: false }],
   };
 
   if (error) return null;
-  if (!data) return <Spin />
-  
+  if (!data) return <Spin />;
+
   return (
-    <ErrorBoundary FallbackComponent={() => <div className="chart-wrapper" />}>
-      <div className="chart-wrapper">
+    <ErrorBoundary FallbackComponent={() => <div className='chart-wrapper' />}>
+      <div className='chart-wrapper'>
         <Line {...config} />
       </div>
     </ErrorBoundary>
   );
-}
+};
 
 export default VolumeChart;

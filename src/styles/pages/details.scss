@@ -10,7 +10,7 @@
   margin: 20px 0;
 
   @include sass-mq.mq($until: mobileLandscape) {
-    margin-top: 0
+    margin-top: 0;
   }
 
   .details-main-content-wrapper {

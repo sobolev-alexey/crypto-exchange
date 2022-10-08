@@ -1,4 +1,4 @@
-import React, { FC, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { SWRConfig } from 'swr';
 import { ErrorBoundary } from 'react-error-boundary';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -22,7 +22,7 @@ function App() {
                 <Routes>
                   <Route path={'/exchange/:id'} element={<Details />} />
                   <Route index element={<Home />} />
-                  <Route path="*" element={<Home />} />
+                  <Route path='*' element={<Home />} />
                 </Routes>
                 <Footer />
               </BrowserRouter>
