@@ -1,11 +1,9 @@
-import React, { useState, useContext } from 'react';
+import { useState } from 'react';
 import { Table } from 'antd';
-import { AppContext } from '../context/globalState';
 import { formatPrice, formatPercentage } from '../utils/format';
 import { Ticker } from '../types';
 
 const Markets = ({ tickers, viewport = '' }: { tickers: Ticker[], viewport?: string }) => {
-  const { priceBTC }: { priceBTC: number } = useContext(AppContext);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
 

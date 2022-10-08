@@ -1,6 +1,5 @@
-import React, { useState, useContext } from 'react';
-import { Table, Badge, Avatar, Statistic } from 'antd';
-import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
+import { useState, useContext } from 'react';
+import { Table, Badge, Avatar } from 'antd';
 import { Link } from 'react-router-dom';
 import VolumeChart from './VolumeChart';
 import { AppContext } from '../context/globalState';
