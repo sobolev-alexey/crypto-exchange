@@ -6,5 +6,6 @@ module.exports = defineConfig({
     baseUrl: 'http://localhost:3000/',
   },
   chromeWebSecurity: false,
-  viewportWidth: 1300
+  viewportWidth: 1300,
+  requestTimeout: 20000
 });
