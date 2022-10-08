@@ -82,34 +82,32 @@ const ExchangesTable = ({ exchanges, viewport = '' }: { exchanges: Exchange[], v
   ];
 
   return (
-    <React.Fragment>
-      <Table
-        scroll={{ x: 1200 }}
-        pagination={{
-          showSizeChanger: true,
-          defaultPageSize: 10,
-          pageSizeOptions: [10, 25, 50],
-          onShowSizeChange: (current, size) => {
-            setPage(current);
-            setPageSize(size)
-          },
-          onChange: (page, pageSize) => {
-            setPage(page);
-            setPageSize(pageSize)
-          },
-          showTotal: (total, range) => {
-            let pageCount = Math.ceil(total / pageSize);
-            if (total === 0 && pageCount === 0) {
-              pageCount = 1;
-            }
-            return `${page} of ${pageCount} page${pageCount > 1 ? 's' : ''}`;
+    <Table
+      scroll={{ x: 1200 }}
+      pagination={{
+        showSizeChanger: true,
+        defaultPageSize: 10,
+        pageSizeOptions: [10, 25, 50],
+        onShowSizeChange: (current, size) => {
+          setPage(current);
+          setPageSize(size)
+        },
+        onChange: (page, pageSize) => {
+          setPage(page);
+          setPageSize(pageSize)
+        },
+        showTotal: (total, range) => {
+          let pageCount = Math.ceil(total / pageSize);
+          if (total === 0 && pageCount === 0) {
+            pageCount = 1;
           }
-        }}
-        dataSource={exchanges}
-        columns={columns}
-        rowKey={record => record?.id}
-      />
-    </React.Fragment>
+          return `${page} of ${pageCount} page${pageCount > 1 ? 's' : ''}`;
+        }
+      }}
+      dataSource={exchanges}
+      columns={columns}
+      rowKey={record => record?.id}
+    />
   )
 };
 

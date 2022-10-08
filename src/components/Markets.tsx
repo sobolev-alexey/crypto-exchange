@@ -49,34 +49,32 @@ const Markets = ({ tickers, viewport = '' }: { tickers: Ticker[], viewport?: str
   ];
 
   return (
-    <React.Fragment>
-      <Table
-        scroll={{ x: 900 }}
-        pagination={{
-          showSizeChanger: true,
-          defaultPageSize: 25,
-          pageSizeOptions: [10, 25, 50, 100],
-          onShowSizeChange: (current, size) => {
-            setPage(current);
-            setPageSize(size)
-          },
-          onChange: (page, pageSize) => {
-            setPage(page);
-            setPageSize(pageSize)
-          },
-          showTotal: (total, range) => {
-            let pageCount = Math.ceil(total / pageSize);
-            if (total === 0 && pageCount === 0) {
-              pageCount = 1;
-            }
-            return `${page} of ${pageCount} page${pageCount > 1 ? 's' : ''}`;
+    <Table
+      scroll={{ x: 900 }}
+      pagination={{
+        showSizeChanger: true,
+        defaultPageSize: 25,
+        pageSizeOptions: [10, 25, 50, 100],
+        onShowSizeChange: (current, size) => {
+          setPage(current);
+          setPageSize(size)
+        },
+        onChange: (page, pageSize) => {
+          setPage(page);
+          setPageSize(pageSize)
+        },
+        showTotal: (total, range) => {
+          let pageCount = Math.ceil(total / pageSize);
+          if (total === 0 && pageCount === 0) {
+            pageCount = 1;
           }
-        }}
-        dataSource={tickers}
-        columns={columns}
-        rowKey={(record: Ticker) => `${record?.base}/${record?.target}`}
-      />
-    </React.Fragment>
+          return `${page} of ${pageCount} page${pageCount > 1 ? 's' : ''}`;
+        }
+      }}
+      dataSource={tickers}
+      columns={columns}
+      rowKey={(record: Ticker) => `${record?.base}/${record?.target}`}
+    />
   )
 };
 
