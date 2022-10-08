@@ -16,7 +16,7 @@ const VolumeChart = ({ id }: { id: string }) => {
     setChartData(chartData);
   }, [data]);
 
-  const config = {
+  const config: any = {
     data: chartData,
     padding: 'auto',
     xField: 'time',
@@ -31,7 +31,7 @@ const VolumeChart = ({ id }: { id: string }) => {
   if (!data) return <Spin />
   
   return (
-    <ErrorBoundary FallbackComponent={<div className="chart-wrapper" />}>
+    <ErrorBoundary FallbackComponent={() => <div className="chart-wrapper" />}>
       <div className="chart-wrapper">
         <Line {...config} />
       </div>
