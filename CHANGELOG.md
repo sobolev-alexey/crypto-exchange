@@ -3,18 +3,20 @@
 ##### Chores
 
 * **App:**
+  *  Update changelog. Closes [#52](https://github.com/sobolev-alexey/crypto-exchange/pull/52) ([621f7bb3](https://github.com/sobolev-alexey/crypto-exchange/commit/621f7bb3c515a66b5524feb0a712aee6e5d8230a))
   *  Changelog ([d709a9ab](https://github.com/sobolev-alexey/crypto-exchange/commit/d709a9ab7119eb04c378d7eef3b945157685e8c1))
   *  Liner fixes. Closes [#46](https://github.com/sobolev-alexey/crypto-exchange/pull/46) ([5866093c](https://github.com/sobolev-alexey/crypto-exchange/commit/5866093ca36dab94d09f3dd66b9d17b88df74556))
   *  ESSLint, Prettier config ([2d6fc777](https://github.com/sobolev-alexey/crypto-exchange/commit/2d6fc777645c9e3ce74c9f9bcd1933f3449a46b6))
   *  Fixebase config and deployment script. Closes [#41](https://github.com/sobolev-alexey/crypto-exchange/pull/41) ([302c73cd](https://github.com/sobolev-alexey/crypto-exchange/commit/302c73cdcbcdb3dd3207eabd8e2c6042cbff7031))
   *  Added TS types for packages. Closes [#15](https://github.com/sobolev-alexey/crypto-exchange/pull/15) ([64f2b892](https://github.com/sobolev-alexey/crypto-exchange/commit/64f2b892c774e990a66de435fbc0e09159deb757))
-* **Cypress:**
-  *  Updated Cypress CI config ([ce2eaffd](https://github.com/sobolev-alexey/crypto-exchange/commit/ce2eaffd31a96d9ef0f35575f8a4a7d2b60d838a))
-  *  Updated Cypress CI config ([d01829e7](https://github.com/sobolev-alexey/crypto-exchange/commit/d01829e7c5ac6ea5fe9c1d19920694c93cc6c354))
 * **Packages:**
+  *  Update packages ([2ab20b07](https://github.com/sobolev-alexey/crypto-exchange/commit/2ab20b07a51c8b34db82d7c50ec008c7a3a553c2))
   *  JS search package ([7ada2381](https://github.com/sobolev-alexey/crypto-exchange/commit/7ada23815b2e4032d1db7bb6962c97e0ef37e01f))
   *  Added SASS pre-processor. Closes [#6](https://github.com/sobolev-alexey/crypto-exchange/pull/6) ([fb2dd78e](https://github.com/sobolev-alexey/crypto-exchange/commit/fb2dd78eb6e19bc6111d9a097806e492f8641dfd))
   *  Ant Design components library. Closes [#5](https://github.com/sobolev-alexey/crypto-exchange/pull/5) ([2b208150](https://github.com/sobolev-alexey/crypto-exchange/commit/2b2081503e40bff5360a89321682c98ce1ab8400))
+* **Cypress:**
+  *  Updated Cypress CI config ([ce2eaffd](https://github.com/sobolev-alexey/crypto-exchange/commit/ce2eaffd31a96d9ef0f35575f8a4a7d2b60d838a))
+  *  Updated Cypress CI config ([d01829e7](https://github.com/sobolev-alexey/crypto-exchange/commit/d01829e7c5ac6ea5fe9c1d19920694c93cc6c354))
 * **Testing:**  Cypress testing configuration. Closes [#9](https://github.com/sobolev-alexey/crypto-exchange/pull/9) ([bcc3aa8f](https://github.com/sobolev-alexey/crypto-exchange/commit/bcc3aa8f4a2778224daa6fcf718a1c39e1d8d200))
 * **Structure:**   Project structure. Closes [#3](https://github.com/sobolev-alexey/crypto-exchange/pull/3) ([beffadb3](https://github.com/sobolev-alexey/crypto-exchange/commit/beffadb33d69800d06d2ad35edb67c8531e5c1f5))
 * **Config:**  Initial project setup with Vite + React + TS ([84c7dc16](https://github.com/sobolev-alexey/crypto-exchange/commit/84c7dc168925eb3f9c8b9bc7c868cb692a2b0f28))
@@ -22,6 +24,7 @@
 ##### Documentation Changes
 
 * **App:**
+  *  Update documentation ([c602f625](https://github.com/sobolev-alexey/crypto-exchange/commit/c602f625cb5e21bbed35b4e9cfc23006ed4e277d))
   *  Documentation ([f7dafc4f](https://github.com/sobolev-alexey/crypto-exchange/commit/f7dafc4fe09c80760542c91ffb1eb25243c31d29))
   *  Cypress screenshots ([fd22cd61](https://github.com/sobolev-alexey/crypto-exchange/commit/fd22cd61871498f4e0ac4a8fcc927c44b4ff0ebd))
   *  Application screenshots ([a5fc0c75](https://github.com/sobolev-alexey/crypto-exchange/commit/a5fc0c759811163daf396d843d54e6123afb2bab))
@@ -29,6 +32,7 @@
 ##### New Features
 
 * **App:**
+  *  Update context price var ([5a20d940](https://github.com/sobolev-alexey/crypto-exchange/commit/5a20d94089ec4a705acd82d403cb939003ef6c76))
   *  Additional classes for Cypress tests. Closes [#47](https://github.com/sobolev-alexey/crypto-exchange/pull/47) ([c53df6a5](https://github.com/sobolev-alexey/crypto-exchange/commit/c53df6a5f88d21b9e618fec65c44e435fcdfb656))
   *  Viewport / Screen dimensions helper ([de99ec01](https://github.com/sobolev-alexey/crypto-exchange/commit/de99ec01ee1ab0387ee3b271c68b4a418bd0b1b0))
   *  Details page updates. Closes [#35](https://github.com/sobolev-alexey/crypto-exchange/pull/35) ([ee2996e3](https://github.com/sobolev-alexey/crypto-exchange/commit/ee2996e3935e772ab1267efec63897e0067ea348))
@@ -65,6 +69,11 @@
 * **App:**
   *  Fixed linter errors ([e9aaeadd](https://github.com/sobolev-alexey/crypto-exchange/commit/e9aaeadd2a6f8037487411a06ccc812377531f08))
   *  Fixed search results display ([686954aa](https://github.com/sobolev-alexey/crypto-exchange/commit/686954aa5d00bc077e89ab258576696a235be170))
+
+##### Refactors
+
+* **Add:**  Refactored exchange data ([7e8016ed](https://github.com/sobolev-alexey/crypto-exchange/commit/7e8016edaeb80b0107c99c54d3817a5927837098))
+* **App:**  Refactored components ([0d8a59a2](https://github.com/sobolev-alexey/crypto-exchange/commit/0d8a59a2a488238b67155f116abf8cb5f39cb5db))
 
 ##### Code Style Changes
 

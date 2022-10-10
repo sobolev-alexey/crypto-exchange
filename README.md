@@ -77,15 +77,15 @@ The project is hosted on Firebase and available under [exchange.lexer.dev](https
 * Cypress application can be started by executing `npm run cy:open` from another terminal. **Please make sure that client application is running in the main terminal**
 * Select `E2E Testing` option once the application starts, then select Chrome browser  
 
-<img src="../screenshots/cypress_start.png">
+<img src="./screenshots/cypress_start.png">
 
 * In the window which opens next select one of the available spec files, e.g. **landing.cy.js**  
 
-<img src="../screenshots/cypress_specs.png">
+<img src="./screenshots/cypress_specs.png">
 
 * The respective test suite will execute automatically producing a visual feedback which can be followed along. Each test case can be replayed by navigating over them with the cursor.
 
-<img src="../screenshots/cypress_e2e.gif">
+<img src="./screenshots/cypress_e2e.gif">
 
 * Cypress also works in a headless mode where it will run all test suites and generate screenshots/videos in case of any issues. It can be started with `npm test`  
 
