@@ -40,6 +40,7 @@
     "@typescript-eslint/parser": "^5.39.0",
     "@vitejs/plugin-react": "^2.1.0",
     "cypress": "^10.9.0",
+    "d3-color": "^3.1.0",
     "eslint": "^8.25.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-recommended": "^4.1.0",
