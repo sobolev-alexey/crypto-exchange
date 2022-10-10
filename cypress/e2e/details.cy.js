@@ -4,8 +4,10 @@ describe('Crypto Exchanges Details Page', () => {
   beforeEach(() => {
     // Stubbed network response to the API endpoint to return a list of exchanges
     cy.intercept(`${API_URL}/exchanges/binance`, { fixture: 'exchange' }).as('exchange-details');
+    cy.intercept(`${API_URL}/simple/price?ids=bitcoin&vs_currencies=usd`, { fixture: 'price' }).as('exchange-price');
     cy.visit('/exchange/binance');
     cy.wait('@exchange-details');
+    cy.wait('@exchange-price');
   });
 
   it('show details page', async () => {

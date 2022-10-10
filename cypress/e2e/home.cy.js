@@ -29,7 +29,7 @@ describe('Crypto Exchanges Directory Page', () => {
 
     cy.get('.personal')
       .should('be.visible')
-      .and('have.text', '© Alexey Sobolev (https://lexer.dev)');
+      .and('have.text', '© Alexey Sobolev 🇺🇦 (https://lexer.dev)');
   })
 
   it('shows exchanges list', () => {
