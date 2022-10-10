@@ -12,14 +12,14 @@ const Footer = () => {
         </Link>
         <div className='copyright'>
           <a href='https://lexer.dev' target='_blank' rel='noopener noreferrer' className='personal'>
-            © Alexey Sobolev (https://lexer.dev)
+            © Alexey Sobolev 🇺🇦 (https://lexer.dev)
           </a>
           <span>
             Data provided by
             <a href='https://www.coingecko.com/' target='_blank' rel='noopener noreferrer'>
               &nbsp;CoinGecko
             </a>
-            &nbsp;|&nbsp; Design by
+            &nbsp;|&nbsp;Design by
             <a
               href='https://coinmarketcap.com/rankings/exchanges/'
               target='_blank'
