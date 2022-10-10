@@ -7,6 +7,7 @@ import ExchangesTable from './home/ExchangesTable';
 import Markets from './details/Markets';
 import VolumeChart from './home/VolumeChart';
 import ExchangeLinks from './details/ExchangeLinks';
+import ExchangeData from './details/ExchangeData';
 
 export {
   Header,
@@ -18,4 +19,5 @@ export {
   VolumeChart,
   Markets,
   ExchangeLinks,
+  ExchangeData,
 };
