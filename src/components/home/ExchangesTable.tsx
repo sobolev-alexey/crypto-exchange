@@ -2,10 +2,10 @@ import React, { useState, useContext } from 'react';
 import { Table, Badge, Avatar } from 'antd';
 import { Link } from 'react-router-dom';
 import VolumeChart from './VolumeChart';
-import { AppContext } from '../context/globalState';
-import { formatPrice, convertColor } from '../utils/format';
-import useWindowDimensions from '../utils/useWindowDimensions';
-import { Exchange } from '../types';
+import { AppContext } from '../../context/globalState';
+import { formatPrice, convertColor } from '../../utils/format';
+import useWindowDimensions from '../../utils/useWindowDimensions';
+import { Exchange } from '../../types';
 
 const ExchangesTable = ({ exchanges }: { exchanges: Exchange[] }) => {
   const { priceBTC }: { priceBTC: number } = useContext(AppContext);

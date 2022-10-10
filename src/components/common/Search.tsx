@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Form, Input } from 'antd';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { SearchOutlined } from '@ant-design/icons';
-import { AppContext } from '../context/globalState';
+import { AppContext } from '../../context/globalState';
 
 const Search = () => {
   const { search, exchanges, setFilteredExchanges } = useContext(AppContext);

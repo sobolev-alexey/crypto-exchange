@@ -7,7 +7,7 @@ import {
   SlackOutlined,
   MessageOutlined,
 } from '@ant-design/icons';
-import { ExchangeData } from '../types';
+import { ExchangeData } from '../../types';
 
 const ExchangeLinks = ({ exchange }: { exchange: ExchangeData }) => {
   const {

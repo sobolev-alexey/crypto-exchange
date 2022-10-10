@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import logoMobile from '../assets/logo.png';
-import logo from '../assets/logo_long.png';
-import { Search } from '.';
+import logoMobile from '../../assets/logo.png';
+import logo from '../../assets/logo_long.png';
+import { Search } from '..';
 
 const Header = () => {
   return (

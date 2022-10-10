@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import logoMobile from '../assets/logo.png';
-import logo from '../assets/logo_long.png';
+import logoMobile from '../../assets/logo.png';
+import logo from '../../assets/logo_long.png';
 
 const Footer = () => {
   return (
@@ -11,7 +11,12 @@ const Footer = () => {
           <img src={logoMobile} alt='Crypto Exchange Directory' className='logo-mobile' />
         </Link>
         <div className='copyright'>
-          <a href='https://lexer.dev' target='_blank' rel='noopener noreferrer' className='personal'>
+          <a
+            href='https://lexer.dev'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='personal'
+          >
             © Alexey Sobolev 🇺🇦 (https://lexer.dev)
           </a>
           <span>
