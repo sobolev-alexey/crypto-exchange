@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Table } from 'antd';
-import { formatPrice, formatPercentage } from '../utils/format';
-import useWindowDimensions from '../utils/useWindowDimensions';
-import { Ticker } from '../types';
+import { formatPrice, formatPercentage } from '../../utils/format';
+import useWindowDimensions from '../../utils/useWindowDimensions';
+import { Ticker } from '../../types';
 
 const Markets = ({ tickers }: { tickers: Ticker[] }) => {
   const { viewport, screenWidth } = useWindowDimensions();

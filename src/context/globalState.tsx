@@ -22,20 +22,20 @@ function GlobalState({ children }: { children: ReactNode }) {
     console.error(error);
   };
 
+  // Fetch exchanges list
   // Options API https://swr.vercel.app/docs/options
   const { data, error } = useSWR(`${import.meta.env.VITE_API_BASE}/exchanges?per_page=100`);
   if (error) {
     errorCallback(error);
   }
 
-  const { data: priceObj, error: priceError } = useSWR(
+  // Fetch BTC price data
+  const { data: price, error: priceError } = useSWR(
     `${import.meta.env.VITE_API_BASE}/simple/price?ids=bitcoin&vs_currencies=usd`
   );
   if (priceError) {
     errorCallback(priceError);
   }
-  // const value = React.useMemo(() => ({ exchanges: data }), [data]);
-  // return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 
   useEffect(() => {
     if (data.length) {
@@ -55,8 +55,8 @@ function GlobalState({ children }: { children: ReactNode }) {
   }, [data]); // eslint-disable-line
 
   useEffect(() => {
-    priceObj && setPriceBTC(priceObj?.bitcoin?.usd);
-  }, [priceObj]); // eslint-disable-line
+    price && setPriceBTC(price?.bitcoin?.usd);
+  }, [price]); // eslint-disable-line
 
   return (
     <AppContext.Provider

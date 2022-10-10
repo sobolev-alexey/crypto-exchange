@@ -97,12 +97,6 @@ The project is hosted on Firebase and available under [exchange.lexer.dev](https
 
 <hr>
 
-### Bundle size
-* The build is minified and the filenames include the hashes
-* Bundle size without source maps is 1.4 MB, from which minified JS portion is 725 kB and minified CSS portion is 570 kB
-
-<hr>
-
 ### Setup & run
 
 * Install packages by running `npm install` in the root folder
@@ -118,11 +112,11 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
-You will also see any lint errors in the console.
+You will also see any lint errors in the console.  
 
 #### `npm test`
 
-Launches the Cypress test runner
+Launches the Cypress test runner  
 
 #### `npm run cy:open`
 
@@ -132,8 +126,16 @@ See the section about [running tests](#testing) for more information.
 #### `npm run build`
 
 Builds the app for production to the `dist` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-The build is minified and the filenames include the hashes.\
+It correctly bundles React in production mode and optimizes the build for the best performance.  
+The build is minified and the filenames include the hashes.  
+
+#### `npm run deploy`
+
+Build the app and deploys it the Firebase hosting (if connected)  
+
+#### `npm run format`
+
+Runs ESLint and Prettier tools to check code formatting and fix issues  
 
 <br />  
 <hr>

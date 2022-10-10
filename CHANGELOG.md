@@ -1,15 +1,16 @@
-#### 1.0.0 (2022-10-08)
+#### 1.0.0 (2022-10-10)
 
 ##### Chores
 
-* **Cypress:**
-  *  Updated Cypress CI config ([ce2eaffd](https://github.com/sobolev-alexey/crypto-exchange/commit/ce2eaffd31a96d9ef0f35575f8a4a7d2b60d838a))
-  *  Updated Cypress CI config ([d01829e7](https://github.com/sobolev-alexey/crypto-exchange/commit/d01829e7c5ac6ea5fe9c1d19920694c93cc6c354))
 * **App:**
+  *  Changelog ([d709a9ab](https://github.com/sobolev-alexey/crypto-exchange/commit/d709a9ab7119eb04c378d7eef3b945157685e8c1))
   *  Liner fixes. Closes [#46](https://github.com/sobolev-alexey/crypto-exchange/pull/46) ([5866093c](https://github.com/sobolev-alexey/crypto-exchange/commit/5866093ca36dab94d09f3dd66b9d17b88df74556))
   *  ESSLint, Prettier config ([2d6fc777](https://github.com/sobolev-alexey/crypto-exchange/commit/2d6fc777645c9e3ce74c9f9bcd1933f3449a46b6))
   *  Fixebase config and deployment script. Closes [#41](https://github.com/sobolev-alexey/crypto-exchange/pull/41) ([302c73cd](https://github.com/sobolev-alexey/crypto-exchange/commit/302c73cdcbcdb3dd3207eabd8e2c6042cbff7031))
   *  Added TS types for packages. Closes [#15](https://github.com/sobolev-alexey/crypto-exchange/pull/15) ([64f2b892](https://github.com/sobolev-alexey/crypto-exchange/commit/64f2b892c774e990a66de435fbc0e09159deb757))
+* **Cypress:**
+  *  Updated Cypress CI config ([ce2eaffd](https://github.com/sobolev-alexey/crypto-exchange/commit/ce2eaffd31a96d9ef0f35575f8a4a7d2b60d838a))
+  *  Updated Cypress CI config ([d01829e7](https://github.com/sobolev-alexey/crypto-exchange/commit/d01829e7c5ac6ea5fe9c1d19920694c93cc6c354))
 * **Packages:**
   *  JS search package ([7ada2381](https://github.com/sobolev-alexey/crypto-exchange/commit/7ada23815b2e4032d1db7bb6962c97e0ef37e01f))
   *  Added SASS pre-processor. Closes [#6](https://github.com/sobolev-alexey/crypto-exchange/pull/6) ([fb2dd78e](https://github.com/sobolev-alexey/crypto-exchange/commit/fb2dd78eb6e19bc6111d9a097806e492f8641dfd))
@@ -17,6 +18,13 @@
 * **Testing:**  Cypress testing configuration. Closes [#9](https://github.com/sobolev-alexey/crypto-exchange/pull/9) ([bcc3aa8f](https://github.com/sobolev-alexey/crypto-exchange/commit/bcc3aa8f4a2778224daa6fcf718a1c39e1d8d200))
 * **Structure:**   Project structure. Closes [#3](https://github.com/sobolev-alexey/crypto-exchange/pull/3) ([beffadb3](https://github.com/sobolev-alexey/crypto-exchange/commit/beffadb33d69800d06d2ad35edb67c8531e5c1f5))
 * **Config:**  Initial project setup with Vite + React + TS ([84c7dc16](https://github.com/sobolev-alexey/crypto-exchange/commit/84c7dc168925eb3f9c8b9bc7c868cb692a2b0f28))
+
+##### Documentation Changes
+
+* **App:**
+  *  Documentation ([f7dafc4f](https://github.com/sobolev-alexey/crypto-exchange/commit/f7dafc4fe09c80760542c91ffb1eb25243c31d29))
+  *  Cypress screenshots ([fd22cd61](https://github.com/sobolev-alexey/crypto-exchange/commit/fd22cd61871498f4e0ac4a8fcc927c44b4ff0ebd))
+  *  Application screenshots ([a5fc0c75](https://github.com/sobolev-alexey/crypto-exchange/commit/a5fc0c759811163daf396d843d54e6123afb2bab))
 
 ##### New Features
 
@@ -82,103 +90,13 @@
 
 ##### Tests
 
+* **App:**
+  *  Updated e2e tests ([c6ab3648](https://github.com/sobolev-alexey/crypto-exchange/commit/c6ab364878740328081a1f8685de2ba9ef8cc0b0))
+  *  Cypress config ([7507d031](https://github.com/sobolev-alexey/crypto-exchange/commit/7507d0316c50ae8d1099fba92d1530306331a71d))
 * **Cypress:**
   *  Cypress GitHub action ([906abafd](https://github.com/sobolev-alexey/crypto-exchange/commit/906abafd9ea021f276c75318b29c7cf41649bf65))
   *  Search functionality e2e test ([58dafd8b](https://github.com/sobolev-alexey/crypto-exchange/commit/58dafd8b60ab0362f86c7643105ac3932bb26b9e))
   *  Details page e2e test ([5f291129](https://github.com/sobolev-alexey/crypto-exchange/commit/5f291129fd5c20482c7836fcc25b2d7bd405629f))
   *  Home page e2e test ([b785e53e](https://github.com/sobolev-alexey/crypto-exchange/commit/b785e53e90f31c9f0c5da6040ccd92491b162a2c))
   *  Cypress fixfures ([70f61169](https://github.com/sobolev-alexey/crypto-exchange/commit/70f6116975f7023b51cc06860d8592dc8856d7bb))
-* **App:**  Cypress config ([7507d031](https://github.com/sobolev-alexey/crypto-exchange/commit/7507d0316c50ae8d1099fba92d1530306331a71d))
-
-#### 1.0.0 (2022-10-08)
-
-##### Chores
-
-* **Cypress:**
-  *  Updated Cypress CI config (ce2eaffd)
-  *  Updated Cypress CI config (d01829e7)
-* **App:**
-  *  Liner fixes. Closes #46 (5866093c)
-  *  ESSLint, Prettier config (2d6fc777)
-  *  Fixebase config and deployment script. Closes #41 (302c73cd)
-  *  Added TS types for packages. Closes #15 (64f2b892)
-* **Packages:**
-  *  JS search package (7ada2381)
-  *  Added SASS pre-processor. Closes #6 (fb2dd78e)
-  *  Ant Design components library. Closes #5 (2b208150)
-* **Testing:**  Cypress testing configuration. Closes #9 (bcc3aa8f)
-* **Structure:**   Project structure. Closes #3 (beffadb3)
-* **Config:**  Initial project setup with Vite + React + TS (84c7dc16)
-
-##### New Features
-
-* **App:**
-  *  Additional classes for Cypress tests. Closes #47 (c53df6a5)
-  *  Viewport / Screen dimensions helper (de99ec01)
-  *  Details page updates. Closes #35 (ee2996e3)
-  *  Updated TS types across components (5f2350c4)
-  *  Table updates (5ba42725)
-  *  Search bar update (dab17240)
-  *  Footer update (d90a8220)
-  *  Header update (426d3a60)
-  *  Details page composition (5e8d769f)
-  *  apply formatter helpers (5d29a6c3)
-  *  Added formatter helpers (e9c0e015)
-  *  Display volume using BTC price (f36c3e5d)
-  *  fetch and cache BTC/USD price (37a35b92)
-  *  Added markets table (1659beb6)
-  *  Added exchange links (83b4c6e2)
-  *  Added basic footer (f40f3ed1)
-  *  Functional search over exchanges array. Closes #14 (7c0e53d4)
-  *  Suspense and fallback. Closes #29 (e4938254)
-  *  Common reusable components (04af2f89)
-  *  Exchange volume chart. Closes #13 (621c2b70)
-  *  List of exchanges, incl. pagination, sorting. Closes #12 (0559fd5a)
-  *  Initial details page. Closes #11 (cf2e8126)
-  *  Initial home page. Closes #10 (5d4b8385)
-* **Context:**  Added context provider and consumer. Added initial data fetching and caching. Closes #8 (13251aba)
-* **Routing:**  Application routing to Home and Details pages. Closes #7 (633bbfd7)
-* **Error:**
-  *  Advanced error notification using Antd (684036b5)
-  *  Added error boundary (971d90a2)
-* **Fetching:**  Added Axios and SWR for response caching. Closes #4 (3926e9b6)
-* **Metadata:**  Updated project metadata. Closes #2 (88c22af7)
-
-##### Bug Fixes
-
-* **App:**
-  *  Fixed linter errors (e9aaeadd)
-  *  Fixed search results display (686954aa)
-
-##### Code Style Changes
-
-* **App:**
-  *  Page styling. Closes #40 (85d7ad4e)
-  *  Header responsive styling (ec7a1e84)
-  *  Footer responsive styling (5451349d)
-  *  Home page responsive styling (a9355fd2)
-  *  Details page responsive styling (9a507665)
-  *  Details page responsive styling (3999ec8d)
-  *  Media query mixin update (472e8a27)
-  *  Text elements styling (2a78e081)
-  *  Color vars (7c65543d)
-  *  Details page styling (700233a6)
-  *  Update styling for search results (0fad9469)
-  *  Home page styling. Closes #34 (44ddb6d8)
-  *  Table styling (3fb0d063)
-  *  Import header stylesheet. Closes #36 (cd92a4a3)
-  *  Header styling (645b79c2)
-  *  Footer styling (bf03ea7c)
-  *  Added logo (ffcf2e15)
-* **Styling:**  Initial application styling (929201f1)
-
-##### Tests
-
-* **Cypress:**
-  *  Cypress GitHub action (906abafd)
-  *  Search functionality e2e test (58dafd8b)
-  *  Details page e2e test (5f291129)
-  *  Home page e2e test (b785e53e)
-  *  Cypress fixfures (70f61169)
-* **App:**  Cypress config (7507d031)
 
